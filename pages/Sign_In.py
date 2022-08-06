@@ -1,9 +1,7 @@
 import streamlit as stream
 
 
-def authenticate():
-   saved_username = "testUsername123"
-   saved_password = "p@ssW0rd"
+def run_sign_in():
 
    username = stream.text_input(
          "username: ", "Enter your username here", 50,
@@ -13,6 +11,11 @@ def authenticate():
             "username", "password")
 
    stream.button("Login", "SignInButtton", "Sign In to website", authenticate)
+
+
+def authenticate(username, password):
+   saved_username = "testUsername123"
+   saved_password = "p@ssW0rd"
 
    if username == saved_username:
       if password == saved_password:
@@ -26,10 +29,5 @@ def authenticate():
          "Sorry. Username not in system. Please make sure you entered the right username")
 
 
-def get_user_credentials():
-   
-
-   return username, password
-
 if __name__ == "__main__":
-   authenticate()
+   run_sign_in()
