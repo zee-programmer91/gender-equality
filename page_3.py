@@ -1,0 +1,23 @@
+import streamlit as st
+
+def app():
+    st.markdown("# Companies ")
+    st.sidebar.markdown("# Notes for Companies")
+
+# credentials:
+#   usernames:
+#     jsmith:
+#       email: jsmith@gmail.com
+#       name: John Smith
+#       password: '123' # To be replaced with hashed password
+#     rbriggs:
+#       email: rbriggs@gmail.com
+#       name: Rebecca Briggs
+#       password: '456' # To be replaced with hashed password
+# cookie:
+#   expiry_days: 30
+#   key: some_signature_key
+#   name: some_cookie_name
+# preauthorized:
+#   emails:
+#   - melsby@gmail.com
