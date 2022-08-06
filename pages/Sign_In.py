@@ -5,9 +5,14 @@ def authenticate():
    saved_username = "testUsername123"
    saved_password = "p@ssW0rd"
 
-   username, password = get_user_credentials()
-   stream.button("Login", "SignInButtton", "Sign In to website", authenticate)
+   username = stream.text_input(
+         "username: ", "Enter your username here", 50,
+         "username", "default", "e.g username123")
 
+   password = stream.text_input("password: ", "Enter your passqord here", 50,
+            "username", "password")
+
+   stream.button("Login", "SignInButtton", "Sign In to website", authenticate)
 
    if username == saved_username:
       if password == saved_password:
@@ -22,12 +27,7 @@ def authenticate():
 
 
 def get_user_credentials():
-   username = stream.text_input(
-         "username: ", "Enter your username here", 50,
-         "username", "default", "e.g username123")
-
-   password = stream.text_input("password: ", "Enter your passqord here", 50,
-            "username", "password")
+   
 
    return username, password
 
