@@ -1,5 +1,4 @@
 import sqlite3 as sql
-from tkinter import E
 import streamlit as stream
 
 
