@@ -10,8 +10,6 @@ def run_sign_in():
    to get closer to the goal that we as women have been striving for - EQUALITY!
    """)
 
-   stream.button("Sign In", "SignIn", "Click here to sign in", authenticate)
-
 
 if __name__ == "__main__":
    run_sign_in()

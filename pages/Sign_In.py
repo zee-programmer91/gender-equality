@@ -30,3 +30,6 @@ def get_user_credentials():
             "username", "password")
 
    return username, password
+
+if __name__ == "__main__":
+   authenticate()
