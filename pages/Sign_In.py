@@ -10,7 +10,9 @@ def run_sign_in():
    password = stream.text_input("password: ", "Enter your passqord here", 50,
             "username", "password")
 
-   stream.button("Login", "SignInButtton", "Sign In to website", authenticate, username, password)
+   arguments = username, password
+
+   stream.button("Login", "SignInButtton", "Sign In to website", authenticate,arguments)
 
 
 def authenticate(username, password):
