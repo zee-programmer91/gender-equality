@@ -3,6 +3,7 @@ import sqlite3 as sql
 
 
 def load_page():
+   stream.markdown("# Sign Up")
 
    name = stream.text_input(
          "Name: ", "Your name here", 20,
