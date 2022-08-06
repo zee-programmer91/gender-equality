@@ -1,5 +1,5 @@
 import streamlit as stream
-from sign_in import authenticate
+from pages.Sign_In import authenticate
 
 
 def run_sign_in():
