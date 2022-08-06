@@ -42,7 +42,7 @@ def save_applicant_details(applicant_info:list):
    if stream.button("Save"):
       with sql.connect("file:database.db?mode=rwc", uri=True) as connection:
          connection.execute(
-            "INSERT INTO applicants (name,surname,age,email,password,location,employment_type,citizenship) VALUES(?,?,?,?,?,?,?,?)",
+            "INSERT INTO applicants (name,surname,age,email,password,location,emplyment_type,citizenship) VALUES(?,?,?,?,?,?,?,?)",
             (applicant_info[0], applicant_info[1], applicant_info[2], applicant_info[3], applicant_info[4],
                applicant_info[5], applicant_info[6], applicant_info[7]))
          stream.text("Information saved successfully!")
