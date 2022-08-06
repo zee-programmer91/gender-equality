@@ -1,7 +1,7 @@
 import streamlit as stream
 
 
-def run():
+def load_page():
 
    username = stream.text_input(
          "username: ", "Enter your username here", 50,

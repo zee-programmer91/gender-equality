@@ -1,4 +1,3 @@
-
 import streamlit as st
 import templates
 
@@ -18,4 +17,4 @@ def app():
     st.sidebar.title('Sign In / Sign Up')
     selection = st.sidebar.radio("Go to", list(page_names_to_funcs.keys()))
     page = page_names_to_funcs[selection]
-    page.run()
+    page.load_page()
