@@ -1,32 +1,29 @@
+import sqlite3 as sql
 import streamlit as stream
 
 
 def load_page():
    stream.markdown("## Sign In")
 
-   username = stream.text_input(
-         "username: ", "Enter your username here", 50,
-         "username", "default", "e.g username123")
+   email = stream.text_input(
+         "email: ", "Enter your email here", 50,
+         "email", "default", "e.g username123")
 
    password = stream.text_input("password: ", "Enter your passqord here", 50,
             "username", "password")
 
-   arguments = username, password
+   arguments = email, password
 
    stream.button("Login", "SignInButtton", "Sign In to website", authenticate,arguments)
 
 
-def authenticate(username, password):
-   saved_username = "testUsername123"
-   saved_password = "p@ssW0rd"
+def authenticate(email, password):
+   with sql.connect("file:database.db?mode=rwc", uri=True) as connection:
+      user_details = connection.execute("SELECT * FROM applicants WHERE email = ?", (email)).fetchone()
 
-   if username == saved_username:
-      if password == saved_password:
-         stream.write(
-         "Welcome to the website")
-      else:
-         stream.write(
-         "Sorry. Incorrect password. Please make sure you entered the right password")
+   if user_details:
+      for user_detail in user_details:
+         stream.text(user_detail)
    else:
       stream.write(
          "Sorry. Username not in system. Please make sure you entered the right username")
