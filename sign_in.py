@@ -19,7 +19,7 @@ def load_page():
 
 def authenticate(email, password):
    with sql.connect("file:database.db?mode=rwc", uri=True) as connection:
-      user_details = connection.execute("SELECT * FROM applicants WHERE email = ?", (email)).fetchone()
+      user_details = connection.execute("SELECT * FROM applicants WHERE email = ?", (email,)).fetchone()
 
    if user_details:
       for user_detail in user_details:
