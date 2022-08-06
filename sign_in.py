@@ -1,4 +1,5 @@
 import sqlite3 as sql
+from tkinter import E
 import streamlit as stream
 
 
@@ -22,8 +23,10 @@ def authenticate(email, password):
       user_details = connection.execute("SELECT * FROM applicants WHERE email = ?", (email,)).fetchone()
 
    if user_details:
-      for user_detail in user_details:
-         stream.text(user_detail)
+      if password == user_details[4]:
+         stream.text("Welcome to the website")
+      else:
+         stream.text("Incorrect Password. Try again.")
    else:
       stream.write(
          "Sorry. Username not in system. Please make sure you entered the right username")
