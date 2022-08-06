@@ -6,6 +6,8 @@ def authenticate():
    saved_password = "p@ssW0rd"
 
    username, password = get_user_credentials()
+   stream.button("Login", "SignInButtton", "Sign In to website", authenticate)
+
 
    if username == saved_username:
       if password == saved_password:
@@ -28,5 +30,3 @@ def get_user_credentials():
             "username", "password")
 
    return username, password
-
-stream.button("Sign In", "SignInButtton", "Sign In to website", authenticate)
